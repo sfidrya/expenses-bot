@@ -2,6 +2,7 @@ const moment = require('moment-timezone');
 const { getWords } = require('./processTextFunctions'); 
 const { addKeywordToCategories, selectSortedCategoryKeywordFromCategories } = require('./dbFunctions.js'); 
 const { sendCommand, sendMessage } = require('./telegram'); 
+const { helpCommandFunction } = require('./commands/helpCommand.js')
 const botName = process.env.RECEIPTS_BOT_NAME; 
 const addKeywordCommand = 'addkeyword'; 
 const startCommand = 'start'; 
@@ -44,7 +45,7 @@ function processBotCommand(command, chatID, senderID, mesDate, db) {
       break; 
     case helpCommand: 
       console.log('helpCommamd'); 
-      //helpCommandFunction(); 
+      helpCommandFunction(chatID); 
       break; 
     case setNameCommand: 
       console.log('setName command'); 
