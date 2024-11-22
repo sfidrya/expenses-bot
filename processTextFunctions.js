@@ -8,15 +8,15 @@ function getSum(words) {
     sum = NaN; 
   } else if (isDate(words[0])) {
     sum = NaN; 
-    console.log('it.s a date, not a sum'); 
+    console.log('it\'s a date, not a sum'); 
   }
   if (isNaN(sum)) {
   sum = parseFloat(words[words.length - 1]); 
     if (endCloseBracket(words[words.length - 1])) {
       sum = NaN; 
     } else if (isDate(words[words.length - 1])) {
-      sum = NaN; 
-      console.log('it.s a date, not a sum'); 
+      sum = NaN;''
+      console.log('it\'s a date, not a sum'); 
     } if (isNaN(sum)) {
         console.log('no sum in the string ', words); 
       } else {

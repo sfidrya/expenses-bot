@@ -16,7 +16,7 @@ function sendMessage(chatID, text) {
     text: text, 
     timeout: 100
   })
-  .then(response =>  {var data = response.data; 
+  .then(response =>  {const data = response.data; 
       console.log('sendMessage after sending message', data); 
       return data;  
   })

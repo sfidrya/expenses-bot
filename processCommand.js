@@ -74,16 +74,16 @@ function recognizeCommandName(shortName) {
     console.log('recognizeCommandName:command addkeyword recognized'); 
     return addKeywordCommand; 
   } else if (startCommand.startsWith(shortName)) {
-    console.log('recogniaeCommand: command start recognized'); 
+    console.log('recognizeCommand: command start recognized'); 
     return startCommand; 
   } else if (helpCommand.startsWith(shortName)) {
-    console.log('recogniaeCommand: command help recognized'); 
+    console.log('recognizeCommand: command help recognized'); 
     return helpCommand; 
   } else if (showExpensesCommand.startsWith(shortName)) {
     console.log('recogniaeCommand: command showexpenses recognized'); 
     return showExpensesCommand; 
   } else if (showKeywordsCommand.startsWith(shortName)) {
-    console.log('recognoseCommandName: command showkeywords recognized'); 
+    console.log('recognizeCommandName: command showkeywords recognized'); 
     return showKeywordsCommand; 
   } else if (setNameCommand.startsWith(shortName)) {
     console.log('recognizeCommandName: setNameCommand recognized')
@@ -139,7 +139,7 @@ function startCommandFunction(chatID) {
       ]
     }
   })
-  .then(response =>  {var data = response.data; 
+  .then(response =>  {const data = response.data; 
       console.log('showExpensesFunctions after sending message', data); 
       return 'start message send'
   })

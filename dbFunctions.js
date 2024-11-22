@@ -136,7 +136,7 @@ function insertRowIntoCategories(db, params){
 function placeholdersForInsertRow(params, nValInRow)
 {
   let placeholders = ''; 
-  var counter = 0;
+  let counter = 0;
   for (x in params) {
     if (counter == 0) {
       placeholders += '('; 
