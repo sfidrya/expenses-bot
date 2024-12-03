@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 dotenv.config(); 
 const axios = require('axios'); 
 const EventEmitter = require('events'); 
-const geoTZ = require('geo-tz'); 
+const { find } = require('geo-tz'); 
 const {
   openDB, createTableExpenses, 
   insertRowIntoExpenses, deleteRowFromExpensesByMessageID, 
@@ -167,7 +167,7 @@ function processNewMessage(message, db){
     }
   } else if (message.location) {
     console.log('location from message:', message.location); 
-    let TZFromLocationResults = geoTZ(message.location.latitude, message.location.longitude); 
+    let TZFromLocationResults = find(message.location.latitude, message.location.longitude); 
     console.log('timezone recognized from location', TZFromLocationResults); 
     if (TZFromLocationResults.length < 1) {
       console.log('set timezone error: no timezone found for this location/ '); 
